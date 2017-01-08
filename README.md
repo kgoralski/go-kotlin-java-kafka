@@ -17,7 +17,7 @@ go get github.com/Shopify/sarama
 
 # How to run
 1. Run Java/Kotlin/Go app from IDE (Prefer IDEA & Gogland)
-1. Send reqest to Java Source App - POST http://localhost:8080/message {"name": "Krzysztof"}
+1. Send request to Java Source App - POST http://localhost:8080/message {"name": "Krzysztof"}
 1. Both Go and Kotlin app will print the messages on their consoles, something like this:
 ```
 INFO 22360 --- [afka-listener-1] com.example.SampleSink  Kotlin received: {"name": "Krzysztof"}
