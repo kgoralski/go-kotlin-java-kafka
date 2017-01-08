@@ -25,7 +25,7 @@ go get github.com/Shopify/sarama
 1. https://blog.codecentric.de/en/2016/04/event-driven-microservices-spring-cloud-stream/
 
 # TODO
-1. Make it more interesting...
+1. Make it more interesting... because printing to console is not that fun ;)
 1. Add SSE/ Websockets/ Http2 Push ?  
 
 
