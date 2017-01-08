@@ -18,7 +18,14 @@ go get github.com/Shopify/sarama
 # How to run
 1. Run Java/Kotlin/Go app from IDE (Prefer IDEA & Gogland)
 1. Send reqest to Java Source App - POST http://localhost:8080/message {"name": "Krzysztof"}
-1. Both Go and Kotlin app will print the messages on their consoles
+1. Both Go and Kotlin app will print the messages on their consoles, something like this:
+```
+INFO 22360 --- [afka-listener-1] com.example.SampleSink  Kotlin received: {"name": "Krzysztof"}
+```
+
+```
+Golang received contentType: "application/json"{"name": "Krzysztof"}
+```
 
 # References
 1. https://medium.com/@Oskarr3/implementing-cqrs-using-kafka-and-sarama-library-in-golang-da7efa3b77fe#.razrnz8eh

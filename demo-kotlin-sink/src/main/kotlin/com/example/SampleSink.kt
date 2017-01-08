@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
 @EnableBinding(Sink::class)
 open class SampleSink {
 
-    private val logger = LoggerFactory.getLogger(SinkApplication::class.java)
+    private val logger = LoggerFactory.getLogger(SampleSink::class.java)
     @StreamListener(Sink.INPUT)
     fun loggerSink(message: String) {
         logger.info("Kotlin received: " + message)
