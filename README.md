@@ -20,6 +20,12 @@ go get github.com/Shopify/sarama
 1. Send reqest to Java Source App - POST http://localhost:8080/message {"name": "Krzysztof"}
 1. Both Go and Kotlin app will print the messages on their consoles
 
+# References
+1. https://medium.com/@Oskarr3/implementing-cqrs-using-kafka-and-sarama-library-in-golang-da7efa3b77fe#.razrnz8eh
+1. https://blog.codecentric.de/en/2016/04/event-driven-microservices-spring-cloud-stream/
+
 # TODO
 1. Make it more interesting...
 1. Add SSE/ Websockets/ Http2 Push ?  
+
+
