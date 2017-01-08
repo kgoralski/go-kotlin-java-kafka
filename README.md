@@ -3,7 +3,7 @@
 
 - demo-java-source with Spring Cloud Stream - localhost:8080
 - demo-kotlin-sink with Spring Cloud Stream - localhost:8081 (Consumer)
-- demo-go-sink with Shopify/sarama - localhost:8082 (Consumer)
+- demo-go-sink with Shopify/sarama (Kafka Client) - localhost:8082 (Consumer)
 - Apache Kafka as Message Broker
 
 Running Kafka from docker:
