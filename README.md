@@ -43,6 +43,6 @@ Golang received: "Krzysztof"}
 
 # TODO
 1. Make it more interesting... because printing to console is not cool enough ;)
-1. Add SSE/ Websockets/ Http2 Push ?  
+1. Add SSE/ Websockets ?  
 
 
