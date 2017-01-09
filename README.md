@@ -22,7 +22,7 @@ go get github.com/Shopify/sarama
 1. Send request to Java Source App - POST http://localhost:8080/message {"name": "Krzysztof"}
 1. Both Go and Kotlin app will print the messages on their consoles, something like this:
 ```
-INFO 22360 --- [afka-listener-1] com.example.SampleSink  Kotlin received: Krzysztof"}
+INFO 22360 --- [afka-listener-1] com.example.SampleSink  Kotlin received: Krzysztof
 ```
 
 ```
