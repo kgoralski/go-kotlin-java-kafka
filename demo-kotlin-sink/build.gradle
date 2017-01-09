@@ -33,6 +33,7 @@ repositories {
 
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-stream-kafka')
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.4")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

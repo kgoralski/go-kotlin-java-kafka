@@ -3,10 +3,16 @@ package main
 import (
 	"fmt"
 
+	"encoding/json"
+
 	"github.com/Shopify/sarama"
 )
 
 var brokers = []string{"localhost:9092"}
+
+type Message struct {
+	Name string `json:"name"`
+}
 
 func subscribe(topic string, consumer sarama.Consumer) {
 	partitionList, err := consumer.Partitions(topic) //get all partitions on the given topic
@@ -27,6 +33,13 @@ func subscribe(topic string, consumer sarama.Consumer) {
 }
 
 func messageReceived(message *sarama.ConsumerMessage) {
-	println("Golang received " + string(message.Value))
-	saveMessage(string(message.Value))
+	var m Message
+
+	err := json.Unmarshal(message.Value, &m)
+	if err != nil {
+		println("JSON parsing error ", err)
+	}
+	println("Golang received: " + m.Name)
+
+	saveMessage(m.Name)
 }
