@@ -29,10 +29,6 @@ func html(text string) string {
 }
 
 func main() {
-
-	config := sarama.NewConfig()
-	config.Consumer.Return.Errors = true
-
 	http.HandleFunc("/main.js", func(w http.ResponseWriter, r *http.Request) {
 
 		mainJS := `alert("` + getMessage() + `");`
@@ -44,24 +40,21 @@ func main() {
 			return
 		}
 		pusher, ok := w.(http.Pusher)
-		if ok { // Push is supported. Try pushing rather than waiting for the browser.
+		if ok {
 			if err := pusher.Push("/main.js", nil); err != nil {
 				log.Printf("Failed to push: %v", err)
 			}
 		}
 		fmt.Fprintf(w, html(getMessage()))
 	})
+
+	config := sarama.NewConfig()
+	config.Consumer.Return.Errors = true
 	consumer, err := sarama.NewConsumer(brokers, config)
 	if err != nil {
 		fmt.Println("Could not create consumer: ", err)
 	}
 	subscribe(topic, consumer)
-
-	http.HandleFunc("/retrieve", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set(contentType, applicationJSON)
-		fmt.Fprint(w, getMessage())
-
-	})
 
 	log.Fatal(http.ListenAndServeTLS(":8082", "cert.pem", "key.pem", nil))
 }
