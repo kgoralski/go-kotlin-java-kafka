@@ -26,7 +26,7 @@ INFO 22360 --- [afka-listener-1] com.example.SampleSink  Kotlin received: Krzysz
 ```
 
 ```
-Golang received: "Krzysztof"}
+Golang received: Krzysztof
 
 ```
 # Http/2 Go Push
